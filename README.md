@@ -5,7 +5,7 @@
 * This week's practical is all about the basic concepts surrounding functions in PHP. Next week will use functions to structure and organise the code in a simple CRUD example.
 
 ## Completing the practical work
-* In a browser open notes.md. These are notes on PHP functions. You should be familiar with the idea of functions from previous programming experience. These notes provide a recap and some specifics on PHP functions. 
+* From github click on notes.md (don't open the downloaded version). These are notes on PHP functions. You should be familiar with the idea of functions from previous programming experience. These notes provide a recap and some specifics on PHP functions. 
 * Open functions.php in a text editor and add your own code to answer the questions.
 
 ## Learning more

@@ -6,12 +6,25 @@
 <body>
 <?php
 
+function hasPassed(int $mark){
+	if($mark>=40){
+		return true;
+	}else{
+		return false;
+	}
+}
+if(hasPassed(45)){
+	echo "Well done";
+}else{
+	echo "Hard luck";
+}
+
+
 /*
 1) The following function simply displays an paragraph
 a) Write a line of code that will call the printDetails function
-b) Modify the function so that you can pass arguments that specify the title of the film and the year of release. See the slides for a similar example. 
+b) Modify the function so that you can pass arguments that specify the title of the film and the year of release. See the notes for a similar example. 
 c) Make several function calls to output details of different films.
-d) Modify the function so that it returns a string instead of printing it. Test this works.
 */
 
 function printDetails()
@@ -22,20 +35,44 @@ function printDetails()
 /*
 2) The following function converts a value in pounds into euros.
 a) Write a line of code that will call this function. Test it works. 
-b) Write your own similar function that will convert a value in inches into centimetres (1cm is 2.54 inches). Test this works.
 */
-function convert($pounds)
+function convertToEuros(int $pounds)
 {
 	return $pounds*1.18;
 }
 
-
 /*
-3) Look at the following function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the world cup. 
-a) Write a line of code that will call this function. Then using a foreach loop output the elements of the returned array.
+b) Write your own similar function, convertToCMs, that will convert a value in inches into centimetres (1cm is 2.54 inches). Test this works. Here's some example code that calls the function:
+
+$oneInch = convertToCMs(1);
+echo "<p>One inch is ".$oneInch."cms.</p>";
 */
 
-function getWinnersByContinent($continent)
+/*
+3) Write a function called addTwoNumbers. The function should accept two arguments and return a single value, the sum of the two numbers. Here's some example code that uses the function:
+
+$result = addTwoNumbers(10,5);
+echo "<p>10 + 5 = ".$result."</p>"; // 10 + 5 = 15
+
+*/
+
+/*
+4) Write a function called isValidUsername. The function should accept a single argument, a string, and return a value of true if the string 6 characters or more in length and false if it isn't. Have a look at http://php.net/manual/en/function.strlen.php for info on determining string length. Again, here's some example code that uses the function:
+
+$userA =  "khutton";
+if(isValidUsername($userA)){
+	echo "<p>Valid username</p>";
+}else{
+	echo "<p>Not a valid username</p>";
+}
+
+*/
+
+/*
+5) Look at the following function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup. Write a line of code that will call this function. Using a foreach loop output the elements of the returned array.
+*/
+
+function getWinnersByContinent(string $continent)
 {
 	$matchingCountries=[];
 	if($continent==="Europe"){
@@ -46,14 +83,11 @@ function getWinnersByContinent($continent)
 	return $matchingCountries;
 }
 
-
-
 /*
-4) The following function accepts an array of filenames and returns only those filenames that have a png, jpg or jpeg extension. 
-a) Write a line of code that will call this function. Then using a foreach loop output the elements of the returned array.
+6) The following function accepts an array of filenames and returns only those filenames that have a png, jpg or jpeg extension. Write a line of code that will call this function. Using a foreach loop output the elements of the returned array.
 */
 
-function filterImageFileNames($arrOfFileNames)
+function filterImageFileNames(array $arrOfFileNames)
 {
 	$matchingFileNames=[];
 	foreach($arrOfFileNames as $filename){
@@ -66,24 +100,33 @@ function filterImageFileNames($arrOfFileNames)
 }
 
 /*
-5) Look at the following code:
+7) 
+a) Write a getPositiveNumbers function. It should accept an array of numbers as input and return only those numbers that are greater than zero. Here's some example code that shows the function being called:
 
-$scores=[20,13,4,23,65];
-echo "<p>The average score was ".calcAverage($scores)."</p>";  //outputs ' The average score was 25'
+$posNumbers = getPositiveNumbers([34,0,-31,4]);
+foreach($posNumbers as $num){
+	echo "<p>".$num."</p>"; // 34, 4
+}
 
-a) Write the calcAverage() function. It should accept an array of numbers as input and return the 
-average of all the numbers in the array.
+b) Write another function called printList(). It should accept a single argument, an array, and output an HTML list, with each element in the array as an item in the list. It shouldn't return any values. Use this function to print out the positive numbers.
+
 
 */
 
 /*
-6) Look at the following code:
+8) Look at the following code:
 
-var_dump(getPositiveNumbers([34,0,-31,4])) ; // [34,4]
+$scores=[20,13,4,23,65];
+echo "<p>The average score was ".calcAverage($scores)."</p>";  //outputs ' The average score was 25'
 
-a) Write the getPositiveNumbers() function. It should accept an array of numbers as input and return only those numbers that are greater than zero. 
+Write the calcAverage function. It should accept an array of numbers as input and return the 
+average of all the numbers in the array.
 
 */
+
+
+
+
 
 ?>
 

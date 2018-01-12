@@ -6,20 +6,6 @@
 <body>
 <?php
 
-function hasPassed(int $mark){
-	if($mark>=40){
-		return true;
-	}else{
-		return false;
-	}
-}
-if(hasPassed(45)){
-	echo "Well done";
-}else{
-	echo "Hard luck";
-}
-
-
 /*
 1) The following function simply displays an paragraph
 a) Write a line of code that will call the printDetails function

@@ -17,7 +17,7 @@ The function name should always describe what the function does e.g. this functi
 
 ## Calling a function
 
-To run the code is a function we write the name of the function followed by the parentheses(). 
+To run the code is a function we write the name of the function followed by  parentheses(curved brackets). 
 
 ```php
 function display_details(){
@@ -31,11 +31,11 @@ display_details(); //this line of code calls the function
 ```
 
 ## Arguments and parameters
-We can pass data to a function, we do this using an argument
+We can pass data to a function, we do this using an argument. 
 ```php
 function display_details($name){
     echo "<ul>";
-    echo "<li>".$name."</li>";
+    echo "<li>$name</li>";
     echo "<li>19</li>";
     echo "<li>Female</li>";
     echo "</ul>";
@@ -51,17 +51,18 @@ Outputs:
 <li>Female</li>
 </ul>
 ```
-When the function is called the text 'Sarah Smith' (the argument) is assigned to the variable *$name* (the parameter).
-Arguments allow us to customise a function. The function can produce different output each time we call it.
+When the function is called, the text 'Sarah Smith' (the argument) is assigned to the variable *$name* (the parameter).
+Arguments allow us to customise a function. The function can produce a different output each time we call it.
 
 ```php
 function display_details($name){
     echo "<ul>";
-    echo "<li>".$name."</li>";
+    echo "<li>{$name}</li>";
     echo "<li>19</li>";
     echo "<li>Female</li>";
     echo "</ul>";
 }
+
 display_details("Sarah Smith");
 display_details("Sadiah Iqbal");
 display_details("Ania Kowalski");
@@ -90,13 +91,14 @@ Outputs:
 ```
 
 ### Multiple arguments
-We can use several arguments. We separate the arguments with a comma.
+We can use several arguments. We separate the arguments and parameters with commas.
+
 ```php
 function display_details($name, $age, $gender){
     echo "<ul>";
-    echo "<li>".$name."</li>";
-    echo "<li>".$age."</li>";
-    echo "<li>".$gender."</li>";
+    echo "<li>{$name}</li>";
+    echo "<li>{$age}</li>";
+    echo "<li>{$gender}</li>";
     echo "</ul>";
 }
 display_details("Sarah Smith", 21, "Female");
@@ -118,15 +120,16 @@ We can make arguments optional by providing a default value for the parameter. I
 ```php
 function display_details($name, $age, $gender="Female"){
     echo "<ul>";
-    echo "<li>".$name."</li>";
-    echo "<li>".$age."</li>";
-    echo "<li>".$gender."</li>";
+    echo "<li>{$name}</li>";
+    echo "<li>{$age}</li>";
+    echo "<li>{$gender}</li>";
     echo "</ul>";
 }
 display_details("Bill Brown",21,"Male");
 display_details("Sarah Smith",21);
 ```
 In the second function call, a third argument isn't specified so it defaults to *female*.
+
 ```html
 <ul>
 <li>Bill Brown</li>
@@ -143,6 +146,7 @@ In the second function call, a third argument isn't specified so it defaults to 
 
 ## Type declarations
 In recent versions of PHP it is possible to specify the data type of parameters. Here's an example:
+
 ```php
 function hasPassed(int $mark){
     if($mark>=40){
@@ -195,7 +199,7 @@ $numDoubled = doubleIt($num);
 echo $num." doubled is ".$numDoubled; //4 doubled is 8 
 ```
 
-The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an if statement. 
+The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement. 
 
 ```php
 function old_enough($age)
@@ -230,7 +234,7 @@ var_dump(isImage("anotherfile.php")); //false
 var_dump(isImage("anyfile.jpg")); //true
 
 ```
-Returning values is often a bettern idea that running echo statements from within a function. It allows the funciton to be used more flexibly. Here's the example from earlier re-written using a *return* statement.
+Returning values is often a better idea than running echo statements from within a function. It allows the function to be used more flexibly. Here's the example from earlier re-written using a *return* statement.
 
 ```php
 function hasPassed(int $mark){
@@ -296,7 +300,5 @@ function tellMeStuff(){
 }
 tellMeStuff();
 ```
-* Global variables are often considered bad programming practice
-* Ties the function to a particular application
-* Functions should work independently
-* Can be used in any application without changing the code (the principle of 'Loose coupling')
+* Global variables are often considered bad programming practice as they tie the function to only being used in the presence of the global variables
+* Ideally, functions should work independently. They can then be used in any application without changing the code (the principle of 'Loose coupling')

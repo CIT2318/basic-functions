@@ -20,7 +20,7 @@ function printDetails()
 
 /*
 2) The following function converts a value in pounds into euros.
-a) Write a line of code that will call this function. Test it works. 
+a) Write a line of code that will call this function. Test it works by outputting the result using an echo statement. 
 */
 function convertToEuros(int $pounds)
 {
@@ -30,15 +30,15 @@ function convertToEuros(int $pounds)
 /*
 b) Write your own similar function, convertToCMs, that will convert a value in inches into centimetres (1cm is 2.54 inches). Test this works. Here's some example code that calls the function:
 
-$oneInch = convertToCMs(1);
-echo "<p>One inch is ".$oneInch."cms.</p>";
+$cms = convertToCMs(1);
+echo "<p>One inch is {$oneInch}cms.</p>";
 */
 
 /*
 3) Write a function called addTwoNumbers. The function should accept two arguments and return a single value, the sum of the two numbers. Here's some example code that uses the function:
 
 $result = addTwoNumbers(10,5);
-echo "<p>10 + 5 = ".$result."</p>"; // 10 + 5 = 15
+echo "<p>10 + 5 = {$result}</p>"; // 10 + 5 = 15
 
 */
 
@@ -55,7 +55,7 @@ if(isValidUsername($userA)){
 */
 
 /*
-5) Look at the following function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup. Write a line of code that will call this function. Using a foreach loop output the elements of the returned array.
+5) Look at the following function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup. Write a line of code that will call this function. Use a foreach loop output the elements of the returned array.
 */
 
 function getWinnersByContinent(string $continent)
@@ -91,7 +91,7 @@ a) Write a getPositiveNumbers function. It should accept an array of numbers as 
 
 $posNumbers = getPositiveNumbers([34,0,-31,4]);
 foreach($posNumbers as $num){
-	echo "<p>".$num."</p>"; // 34, 4
+	echo "<p>{$num}</p>"; // 34, 4
 }
 
 b) Write another function called printList(). It should accept a single argument, an array, and output an HTML list, with each element in the array as an item in the list. It shouldn't return any values. Use this function to print out the positive numbers.
@@ -102,11 +102,11 @@ b) Write another function called printList(). It should accept a single argument
 /*
 8) Look at the following code:
 
-$scores=[20,13,4,23,65];
-echo "<p>The average score was ".calcAverage($scores)."</p>";  //outputs ' The average score was 25'
+$scores = [20,13,4,23,65];
+$avg = calcAverage($scores);
+echo "<p>The average score was {$avg}</p>";  //outputs ' The average score was 25'
 
-Write the calcAverage function. It should accept an array of numbers as input and return the 
-average of all the numbers in the array.
+Write the calcAverage function. It should accept an array of numbers as input and return the average of all the numbers in the array.
 
 */
 

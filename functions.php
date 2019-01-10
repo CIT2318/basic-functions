@@ -31,7 +31,7 @@ function convertToEuros(int $pounds)
 b) Write your own similar function, convertToCMs, that will convert a value in inches into centimetres (1cm is 2.54 inches). Test this works. Here's some example code that calls the function:
 
 $cms = convertToCMs(1);
-echo "<p>One inch is {$oneInch}cms.</p>";
+echo "<p>One inch is {$cms}cms.</p>";
 */
 
 /*
@@ -64,7 +64,7 @@ function getWinnersByContinent(string $continent)
 	if($continent==="Europe"){
 		$matchingCountries=["France","Germany","Spain","England","Italy"];
 	}else if($continent==="South America"){
-		$matchingCountries=["Argentina","Brazil","Uruguay","England"];
+		$matchingCountries=["Argentina","Brazil","Uruguay"];
 	}
 	return $matchingCountries;
 }

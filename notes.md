@@ -35,7 +35,7 @@ We can pass data to a function, we do this using an argument.
 ```php
 function display_details($name){
     echo "<ul>";
-    echo "<li>$name</li>";
+    echo "<li>{$name}</li>";
     echo "<li>19</li>";
     echo "<li>Female</li>";
     echo "</ul>";
@@ -196,7 +196,7 @@ function doubleIt(int $num)
 }
 $num = 4;
 $numDoubled = doubleIt($num);
-echo $num." doubled is ".$numDoubled; //4 doubled is 8 
+echo "{$num} doubled is {$numDoubled}"; //4 doubled is 8  
 ```
 
 The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement. 
@@ -254,6 +254,7 @@ if(hasPassed(45)){
 ## Returning arrays
 We can return any type of data we want. This example returns an array.
 ```php
+
 function searchBandsByGenre($searchTerm)
 {
     $bands=[
@@ -274,7 +275,7 @@ $matchingBands = searchBandsByGenre("Pop");
 
 foreach($matchingBands as $band)
 {
-    echo "<p>".$band["name"]."</p>";
+    echo "<p>{$band["name"]}</p>";
 }
 
 ```

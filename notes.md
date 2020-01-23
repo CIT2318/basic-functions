@@ -35,7 +35,7 @@ We can pass data to a function, we do this using an argument.
 ```php
 function display_details($name){
     echo "<ul>";
-    echo "<li>{$name}</li>";
+    echo "<li>$name</li>";
     echo "<li>19</li>";
     echo "<li>Female</li>";
     echo "</ul>";
@@ -196,7 +196,7 @@ function doubleIt(int $num)
 }
 $num = 4;
 $numDoubled = doubleIt($num);
-echo "{$num} doubled is {$numDoubled}"; //4 doubled is 8
+echo $num." doubled is ".$numDoubled; //4 doubled is 8
 ```
 
 The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement.
@@ -254,28 +254,27 @@ if(hasPassed(45)){
 ## Returning arrays
 We can return any type of data we want. This example returns an array.
 ```php
-
-function filterCountriesByPopulation(int $population)
+function searchBandsByGenre($searchTerm)
 {
-    $countries=[
-      ["name"=>"Germany", "capital"=>"Berlin", "population"=>81000000],
-      ["name"=>"France", "capital"=>"Paris", "population"=>66000000],
-      ["name"=>"Italy", "capital"=>"Rome", "population"=>60000000]
+    $bands=[
+        ["name"=>"The Rolling Stones", "formed"=>1962, "genre"=>"Rock"],
+        ["name"=>"The Beatles", "formed"=>1960, "genre"=>"Rock"],
+        ["name"=>"The Wu-Tang Clan", "formed"=>1992, "genre"=>"Hip-hop"],
+        ["name"=>"Busted", "formed"=>2000, "genre"=>"Pop"],
     ];
     $matches=[];
-    foreach($countries as $country){
-        if($country["population"]>=$population){
-            $matches[]=$country;
+    foreach($bands as $band){
+        if($band["genre"]===$searchTerm){
+            $matches[]=$band;
         }
     }
     return $matches;
 }
-$matchingCountries = filterCountriesByPopulation(65000000);
+$matchingBands = searchBandsByGenre("Pop");
 
-foreach($matchingCountries as $country)
+foreach($matchingBands as $band)
 {
-
-    echo "<p>{$country['name']} has a population of {$country['population']}</p>";
+    echo "<p>".$band["name"]."</p>";
 }
 
 ```

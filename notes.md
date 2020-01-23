@@ -17,7 +17,7 @@ The function name should always describe what the function does e.g. this functi
 
 ## Calling a function
 
-To run the code is a function we write the name of the function followed by  parentheses(curved brackets). 
+To run the code is a function we write the name of the function followed by  parentheses(curved brackets).
 
 ```php
 function display_details(){
@@ -31,7 +31,7 @@ display_details(); //this line of code calls the function
 ```
 
 ## Arguments and parameters
-We can pass data to a function, we do this using an argument. 
+We can pass data to a function, we do this using an argument.
 ```php
 function display_details($name){
     echo "<ul>";
@@ -157,8 +157,8 @@ function hasPassed(int $mark){
 }
 hasPassed(45);
 ```
-* The keyword *int* before the parameter *$mark* specifies mark must be an integer. If the argument is a different data type e.g. a *string* PHP will throw an error. You can look up the valid types ( including string, array, bool, int) at http://php.net/manual/en/functions.arguments.php. 
-* It is considered good practice to use type declarations as it makes it clear in your code what type of data to pass to a function.  
+* The keyword *int* before the parameter *$mark* specifies mark must be an integer. If the argument is a different data type e.g. a *string* PHP will throw an error. You can look up the valid types ( including string, array, bool, int) at http://php.net/manual/en/functions.arguments.php.
+* It is considered good practice to use type declarations as it makes it clear in your code what type of data to pass to a function.
 
 ## Arrays as arguments
 We can pass any type of variable as an argument. This example uses an array.
@@ -196,10 +196,10 @@ function doubleIt(int $num)
 }
 $num = 4;
 $numDoubled = doubleIt($num);
-echo "{$num} doubled is {$numDoubled}"; //4 doubled is 8  
+echo "{$num} doubled is {$numDoubled}"; //4 doubled is 8
 ```
 
-The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement. 
+The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement.
 
 ```php
 function old_enough($age)
@@ -255,27 +255,27 @@ if(hasPassed(45)){
 We can return any type of data we want. This example returns an array.
 ```php
 
-function searchBandsByGenre($searchTerm)
+function filterCountriesByPopulation(int $population)
 {
-    $bands=[
-        ["name"=>"The Rolling Stones", "formed"=>1962, "genre"=>"Rock"],
-        ["name"=>"The Beatles", "formed"=>1960, "genre"=>"Rock"],
-        ["name"=>"The Wu-Tang Clan", "formed"=>1992, "genre"=>"Hip-hop"],
-        ["name"=>"Busted", "formed"=>2000, "genre"=>"Pop"],
+    $countries=[
+      ["name"=>"Germany", "capital"=>"Berlin", "population"=>81000000],
+      ["name"=>"France", "capital"=>"Paris", "population"=>66000000],
+      ["name"=>"Italy", "capital"=>"Rome", "population"=>60000000]
     ];
     $matches=[];
-    foreach($bands as $band){
-        if($band["genre"]===$searchTerm){
-            $matches[]=$band;
+    foreach($countries as $country){
+        if($country["population"]>=$population){
+            $matches[]=$country;
         }
     }
     return $matches;
 }
-$matchingBands = searchBandsByGenre("Pop");
+$matchingCountries = filterCountriesByPopulation(65000000);
 
-foreach($matchingBands as $band)
+foreach($matchingCountries as $country)
 {
-    echo "<p>{$band["name"]}</p>";
+
+    echo "<p>{$country['name']} has a population of {$country['population']}</p>";
 }
 
 ```
@@ -285,7 +285,7 @@ Variables declared inside a function are only available to that function
 ```php
 function getName(){
     $name="Fred";
-    echo $name; 
+    echo $name;
 }
 
 getName(); //outputs Fred

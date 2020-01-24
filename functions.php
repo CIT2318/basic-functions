@@ -14,9 +14,7 @@ c) Modify the function so that you can pass a third argument that specifies the 
 */
 
 
-printDetails("Jaws","1975");
-printDetails("Back to the Future","1985");
-printDetails("Inception","2010");
+
 
 
 
@@ -27,8 +25,7 @@ a) Write a line of code that will call this function. Test it works by outputtin
 
 
 
-$euros = convertToEuros(100);
-echo $euros;
+
 
 
 /*
@@ -36,8 +33,7 @@ echo $euros;
 a) Write a line of code that will call this function. Test it works by outputting the result using an echo statement.
 */
 
-$result = addTwoNumbers(10,5);
-echo "<p>10 + 5 = {$result}</p>"; // 10 + 5 = 15
+
 
 /*
 3) Look at the getWinnersByContinent function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup.

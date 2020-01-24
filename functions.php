@@ -29,35 +29,35 @@ a) Write a line of code that will call this function. Test it works by outputtin
 
 
 /*
-2) The function addTwoNumbers adds two numbers together and returns the result.
+3) The function addTwoNumbers adds two numbers together and returns the result.
 a) Write a line of code that will call this function. Test it works by outputting the result using an echo statement.
 */
 
 
 
 /*
-3) Look at the getWinnersByContinent function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup.
+4) Look at the getWinnersByContinent function. It accepts the name of a continent as an argument and then returns an array of countries from that continent that have won the World Cup.
 a) Write a line of code that will call this function. Use a foreach loop output the elements of the returned array.
 */
 
 
 
 /*
-4) Look at the getPositiveNumbers function. It accepts an array of numbers and returns only those numbers that are greater than zero
+5) Look at the getPositiveNumbers function. It accepts an array of numbers and returns only those numbers that are greater than zero
 a) Write a line of code that will call this function. Use a foreach loop output the elements of the returned array.
 */
 
 
 
 /*
-5) Look at the filterImageFileNames function. It accepts an array of filenames and returns only those filenames that have a png, jpg or jpeg extension.
+6) Look at the filterImageFileNames function. It accepts an array of filenames and returns only those filenames that have a png, jpg or jpeg extension.
 a) Write a line of code that will call this function. Using a foreach loop output the elements of the returned array.
 */
 
 
 
 /*
-6) Write your own function called isValidUsername. The function should accept a single argument, a string, and return a value of true if the string 6 characters or more in length and false if it isn't. Have a look at http://php.net/manual/en/function.strlen.php for info on determining string length. Here's some example code that uses the function. Uncomment this code code to check it works.
+7) Write your own function called isValidUsername. The function should accept a single argument, a string, and return a value of true if the string 6 characters or more in length and false if it isn't. Have a look at http://php.net/manual/en/function.strlen.php for info on determining string length. Here's some example code that uses the function. Uncomment this code code to check it works.
 */
 
 /*
@@ -71,11 +71,11 @@ if(isValidUsername($userA)){
 
 
 /*
-7) Write your own function called printList(). It should accept a single argument, an array, and output an HTML list, with each element in the array as an item in the list. It shouldn't return any values. Use this function to print out the returned values from getWinnersByContinent, getPositiveNumbers and filterImageFileNames.
+8) Write your own function called printList(). It should accept a single argument, an array, and output an HTML list, with each element in the array as an item in the list. It shouldn't return any values. Use this function to print out the returned values from getWinnersByContinent, getPositiveNumbers and filterImageFileNames.
 */
 
 /*
-8) Look at the following code:
+9) Look at the following code:
 
 $scores = [20,13,4,23,65];
 $avg = calcAverage($scores);

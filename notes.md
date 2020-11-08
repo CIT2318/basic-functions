@@ -127,11 +127,11 @@ Outputs:
 We can make arguments optional by providing a default value for the parameter. In this example *$course* is given a default value of "IT".
 
 ```php
-function display_details($name, $age, $gender="IT"){
+function display_details($name, $age, $course="IT"){
     echo "<ul>";
     echo "<li>{$name}</li>";
     echo "<li>{$age}</li>";
-    echo "<li>{$gender}</li>";
+    echo "<li>{$course}</li>";
     echo "</ul>";
 }
 display_details("Bill Brown",21,"Web Design");

@@ -17,17 +17,26 @@ The function name should always describe what the function does e.g. this functi
 
 ## Calling a function
 
-To run the code is a function we write the name of the function followed by  parentheses(curved brackets).
+To run the code in a function we write the name of the function followed by  parentheses(curved brackets).
 
 ```php
 function display_details(){
     echo "<ul>";
     echo "<li>Jane Jones</li>";
     echo "<li>19</li>";
-    echo "<li>Female</li>";
+    echo "<li>IT</li>";
     echo "</ul>";
 }
 display_details(); //this line of code calls the function
+```
+This would output
+
+```html
+<ul>
+<li>Jane Jones</li>
+<li>19</li>
+<li>IT</li>
+</ul>
 ```
 
 ## Arguments and parameters
@@ -37,7 +46,7 @@ function display_details($name){
     echo "<ul>";
     echo "<li>$name</li>";
     echo "<li>19</li>";
-    echo "<li>Female</li>";
+    echo "<li>IT</li>";
     echo "</ul>";
 }
 
@@ -48,7 +57,7 @@ Outputs:
 <ul>
 <li>Sarah Smith</li>
 <li>19</li>
-<li>Female</li>
+<li>IT</li>
 </ul>
 ```
 When the function is called, the text 'Sarah Smith' (the argument) is assigned to the variable *$name* (the parameter).
@@ -73,19 +82,19 @@ Outputs:
 <ul>
 <li>Sarah Smith</li>
 <li>19</li>
-<li>Female</li>
+<li>IT</li>
 </ul>
 
 <ul>
 <li>Sadiah Iqbal</li>
 <li>19</li>
-<li>Female</li>
+<li>IT</li>
 </ul>
 
 <ul>
 <li>Ania Kowalski</li>
 <li>19</li>
-<li>Female</li>
+<li>IT</li>
 </ul>
 
 ```
@@ -94,14 +103,14 @@ Outputs:
 We can use several arguments. We separate the arguments and parameters with commas.
 
 ```php
-function display_details($name, $age, $gender){
+function display_details($name, $age, $course){
     echo "<ul>";
     echo "<li>{$name}</li>";
     echo "<li>{$age}</li>";
-    echo "<li>{$gender}</li>";
+    echo "<li>{$course}</li>";
     echo "</ul>";
 }
-display_details("Sarah Smith", 21, "Female");
+display_details("Sarah Smith", 21, "Computing in Business");
 
 ```
 Outputs:
@@ -109,38 +118,38 @@ Outputs:
 <ul>
 <li>Sarah Smith</li>
 <li>21</li>
-<li>Female</li>
+<li>Computing in Business</li>
 </ul>
 ```
 
 ### Optional arguments
 
-We can make arguments optional by providing a default value for the parameter. In this example *$gender* is given a default value of "Female".
+We can make arguments optional by providing a default value for the parameter. In this example *$course* is given a default value of "IT".
 
 ```php
-function display_details($name, $age, $gender="Female"){
+function display_details($name, $age, $gender="IT"){
     echo "<ul>";
     echo "<li>{$name}</li>";
     echo "<li>{$age}</li>";
     echo "<li>{$gender}</li>";
     echo "</ul>";
 }
-display_details("Bill Brown",21,"Male");
-display_details("Sarah Smith",21);
+display_details("Bill Brown",21,"Web Design");
+display_details("Sarah Smith",27);
 ```
-In the second function call, a third argument isn't specified so it defaults to *female*.
+In the second function call, a third argument isn't specified so it defaults to *IT*.
 
 ```html
 <ul>
 <li>Bill Brown</li>
 <li>21</li>
-<li>Male</li>
+<li>Web Design</li>
 </ul>
 
 <ul>
 <li>Sarah Smith</li>
-<li>21</li>
-<li>Female</li>
+<li>27</li>
+<li>IT</li>
 </ul>
 ```
 
@@ -196,7 +205,7 @@ function doubleIt(int $num)
 }
 $num = 4;
 $numDoubled = doubleIt($num);
-echo $num." doubled is ".$numDoubled; //4 doubled is 8
+echo "{$num} doubled is {$numDoubled}"; //4 doubled is 8
 ```
 
 The return statement sends a value back to the point in the script the function was called from. In this next example it is used in an *if* statement.
@@ -254,27 +263,26 @@ if(hasPassed(45)){
 ## Returning arrays
 We can return any type of data we want. This example returns an array.
 ```php
-function searchBandsByGenre($searchTerm)
+function searchCountriesByContinent($searchTerm)
 {
-    $bands=[
-        ["name"=>"The Rolling Stones", "formed"=>1962, "genre"=>"Rock"],
-        ["name"=>"The Beatles", "formed"=>1960, "genre"=>"Rock"],
-        ["name"=>"The Wu-Tang Clan", "formed"=>1992, "genre"=>"Hip-hop"],
-        ["name"=>"Busted", "formed"=>2000, "genre"=>"Pop"],
+    $countries=[
+      ["name"=>"Germany", "capital"=>"Berlin", "continent"=>"Europe"],
+      ["name"=>"France", "capital"=>"Paris", "continent"=>"Europe"],
+      ["name"=>"Japan", "capital"=>"Tokyo", "continent"=>"Asia"],
+      ["name"=>"Italy", "capital"=>"Rome", "continent"=>"Europe"]
     ];
     $matches=[];
-    foreach($bands as $band){
-        if($band["genre"]===$searchTerm){
-            $matches[]=$band;
+    foreach($countries as $country){
+        if($country["continent"]===$searchTerm){
+            $matches[]=$country;
         }
     }
     return $matches;
 }
-$matchingBands = searchBandsByGenre("Pop");
+$matchingCountries = searchBandsByGenre("Europe");
 
-foreach($matchingBands as $band)
-{
-    echo "<p>".$band["name"]."</p>";
+foreach($matchingCountries as $country){
+    echo "<p>{$countries["name"]}</p>";
 }
 
 ```

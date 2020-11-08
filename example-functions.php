@@ -52,3 +52,30 @@ function filterImageFileNames(array $arrOfFileNames)
 	}
 	return $matchingFileNames;
 }
+
+function isValidUserName(string $userName)
+{
+	if(strlen($userName)>=6){
+		return true;
+	}
+	return false;
+}
+
+function printList(array $arrOfNumbers)
+{
+	echo "<ul>";
+	foreach($arrOfNumbers as $num){
+		echo "<li>{$num}</li>";
+	}
+	echo "</ul>";
+}
+
+function calcAverage(array $nums)
+{
+	$total=0;
+	foreach($nums as $num){
+		$total+=$num;
+	}
+	$avg = $total/count($nums);
+	return $avg;
+}
